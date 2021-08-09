@@ -1,0 +1,93 @@
+# set the default mod to emacs instead of vi (mostly for ksh)
+set -o emacs
+
+# hardcoded path to Roman Herasymenko directories
+export PREFIX=$HOME
+
+# PATH to locally installed binaries
+export PATH=$PATH:$PREFIX/usr/local/bin
+
+alias .rc="source $PREFIX/.shrc"
+
+alias shname='echo $0'
+
+LOCATEDB=$HOME/.locatedb
+alias updatedb="updatedb --output=$LOCATEDB --localpaths='/ /tmp/'"
+alias locate="locate --database=$LOCATEDB"
+
+alias vim='$PREFIX/usr/local/bin/vim'
+alias vi='vim'
+alias vi7='/usr/bin/vi'
+alias vim7=vi7
+
+alias gdb='$PREFIX/usr/local/bin/gdb'
+alias gdb7='/usr/bin/gdb'
+
+alias grep='grep --color=auto'
+alias ls='ls --color=auto'
+
+alias l='ls -CF'
+alias la='ls -A'
+alias lsd='ls -F | grep /'
+
+# lla -> all files with the newest first.
+# llaa -> all files with the alphabetical order.
+# llh -> all files with the newest first and with human readable sizes.
+alias lla='ll -At'
+alias llaa='ll -A'
+alias llh='ll -Ath'
+
+alias rm='rm -I'
+alias mv='mv -i'
+
+alias ..='cd ..'
+alias cd..='cd ..'
+
+alias co='code'
+alias cog='code -g'
+alias coa='code -a'
+
+alias .all='. *.profile'
+
+alias arshort='autorep -j'
+alias ars='arshort'
+
+alias arfull='autorep -wqj'
+alias arlong='arfull'
+alias arl='arfull'
+
+alias arforce='sendevent -E FORCE_STARTJOB -J'
+alias arf='arforce'
+
+alias cp-template="cp -r $PREFIX/template/dom/* ."
+alias cp-itemplate="cp -r $PREFIX/template/intl/* ."
+
+# tmux aliases
+alias tkill="tmux kill-session -t"
+alias tnew="tmux new-session -s"
+alias tclear="tmux clear-history"
+alias tls="tmux ls"
+alias t.="tmux source-file"
+alias t.conf="tmux source-file $HOME/.tmux.conf"
+
+# Also PREFIX + ,
+alias trw="tmux rename-window"
+
+alias tattach="tmux attach-session -t"
+alias ta="tmux attach-session -t"
+
+# Fix for pip3
+# https://stackoverflow.com/questions/63414448/pip3-throws-undefined-symbol-xml-sethashsalt
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PREFIX/usr/local/lib:$PREFIX/usr/local/lib64
+
+export ACLOCAL_PATH=$PREFIX/usr/local/share/aclocal
+
+# Set a vim as a default editor
+export EDITOR=vim
+
+# Change default timeout
+export TMOUT=86400
+# if we start a terminal in tmux then reset to zero
+if [ -n "$TMUX" ]; then
+    export TMOUT=0
+fi
