@@ -1,7 +1,7 @@
 # set the default mod to emacs instead of vi (mostly for ksh)
 set -o emacs
 
-alias .rc="source $PREFIX/.shrc"
+alias .rc="source $HOME/.shrc"
 
 alias shname='echo $0'
 
