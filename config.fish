@@ -9,11 +9,8 @@ alias l='exa'
 alias la='exa -a'
 alias lsd='exa -D'
 
-# lla -> all files with the newest first.
-# llaa -> all files with the alphabetical order.
-# llh -> all files with the newest first and with human readable sizes.
 alias ll='exa -l'
-alias lla='exa -la -s=modified'
+alias lla='exa -la -s=modified --header --git --accessed --modified'
 
 alias rm='rm -I'
 alias mv='mv -i'
