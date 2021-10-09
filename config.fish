@@ -10,7 +10,7 @@ alias la='exa -a'
 alias lsd='exa -D'
 
 alias ll='exa -l'
-alias lla='exa -la -s=modified --header --git --accessed --modified'
+alias lla='exa -la -s=oldest --header --git --accessed --modified'
 
 alias rm='rm -I'
 alias mv='mv -i'
