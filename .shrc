@@ -46,4 +46,4 @@ alias ta="tmux attach-session -t"
 
 # Set a vim as a default editor
 export EDITOR=vim
-
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin

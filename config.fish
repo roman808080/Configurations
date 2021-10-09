@@ -51,3 +51,4 @@ set -x EDITOR vim
 set -x JAVA_HOME /usr/lib/jvm/java-1.8.0
 set -x PATH $JAVA_HOME/bin $PATH
 
+set -x PATH $PATH /home/linuxbrew/.linuxbrew/bin
