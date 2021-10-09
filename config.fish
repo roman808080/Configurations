@@ -3,18 +3,17 @@ alias updatedb="updatedb --output=$LOCATEDB --localpaths='/ /tmp/'"
 alias locate="locate --database=$LOCATEDB"
 
 alias grep='grep --color=auto'
-alias ls='ls --color=auto'
+alias ls='exa'
 
-alias l='ls -CF'
-alias la='ls -A'
-alias lsd='ls -F | grep /'
+alias l='exa'
+alias la='exa -a'
+alias lsd='exa -D'
 
 # lla -> all files with the newest first.
 # llaa -> all files with the alphabetical order.
 # llh -> all files with the newest first and with human readable sizes.
-alias lla='ll -At'
-alias llaa='ll -A'
-alias llh='ll -Ath'
+alias ll='exa -l'
+alias lla='exa -la -s=modified'
 
 alias rm='rm -I'
 alias mv='mv -i'
