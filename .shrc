@@ -46,4 +46,13 @@ alias ta="tmux attach-session -t"
 
 # Set a vim as a default editor
 export EDITOR=vim
-export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+export PATH=$PATH:$HOME/.emacs.d/bin
+export PATH=$PATH:$HOME/.local/bin
+
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+    export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+fi
+
+export GPG_TTY=$(tty)
