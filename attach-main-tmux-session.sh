@@ -3,6 +3,7 @@
 # E.g. ssh dev -t ./Configurations/attach-main-tmux-session.sh
 # E.g. wsl.exe -d Ubuntu -e bash -c '~/Configurations/attach-main-tmux-session.sh'
 # E.g. powershell wsl.exe -d Ubuntu -e bash -c '~/Configurations/attach-main-tmux-session.sh'
+# E.g. powershell bash -c '~/Configurations/attach-main-tmux-session.sh'
 
 # Going to the home directory to start the session in the home directory.
 cd ~
