@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 if [ x"${WAYLAND_DISPLAY}" == "x" ]; then 
-   tabbed alacritty --embed
+   tabbed -n Alacritty alacritty --embed
 else
-   WAYLAND_DISPLAY=alacritty tabbed alacritty --embed
+   WAYLAND_DISPLAY=alacritty tabbed -n Alacritty alacritty --embed 
 fi
