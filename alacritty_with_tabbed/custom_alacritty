@@ -1,0 +1,7 @@
+#!/bin/env bash
+
+if [ x"${WAYLAND_DISPLAY}" == "x" ]; then 
+   tabbed alacritty --embed
+else
+   WAYLAND_DISPLAY=alacritty tabbed alacritty --embed
+fi
